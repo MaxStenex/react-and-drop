@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.draggable {
+  @apply select-none cursor-pointer;
+}
