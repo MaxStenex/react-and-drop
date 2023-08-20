@@ -8,7 +8,7 @@ export const cardsData: Card[] = [
   },
   {
     id: 2,
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, optio.",
+    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere vero id, odit necessitatibus expedita accusamus repudiandae dolore eius? Adipisci ullam et asperiores totam ad cum.",
     imageSrc: "https://api.slingacademy.com/public/sample-photos/1.jpeg",
   },
   {
@@ -18,7 +18,7 @@ export const cardsData: Card[] = [
   },
   {
     id: 4,
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, optio.",
+    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere vero id, odit necessitatibus expedita accusamus repudiandae dolore eius? Adipisci ullam et asperiores totam ad cum.",
     imageSrc: "https://api.slingacademy.com/public/sample-photos/1.jpeg",
   },
   {
