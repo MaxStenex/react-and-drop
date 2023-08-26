@@ -14,7 +14,10 @@ export const CardsList: FC<Props> = () => {
     <DroppableContextProvider>
       <Droppable>
         {({ droppableRef }) => (
-          <ul className="max-w-md p-5 bg-gray-500 space-y-3" ref={droppableRef}>
+          <ul
+            className="max-w-md p-5 bg-gray-500 space-y-3 mx-auto mt-4"
+            ref={droppableRef}
+          >
             {items.map((i) => (
               <Draggable key={i.id}>
                 {({ draggableRef }) => (
