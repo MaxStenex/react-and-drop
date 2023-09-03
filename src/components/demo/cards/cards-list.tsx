@@ -1,4 +1,5 @@
 import { Draggable } from "@/components/draggable/draggable";
+import { DraggableElementPlaceholder } from "@/components/draggable/placeholder";
 import { Droppable } from "@/components/droppable/droppable";
 import { DroppableContextProvider } from "@/components/droppable/droppable-context";
 import { Card } from "@/types/card";
@@ -35,6 +36,7 @@ export const CardsList: FC<Props> = () => {
                 )}
               </Draggable>
             ))}
+            <DraggableElementPlaceholder />
           </ul>
         )}
       </Droppable>

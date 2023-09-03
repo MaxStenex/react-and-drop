@@ -1,19 +1,21 @@
-import { ReactNode, createContext, FC, useState } from "react";
+import { createContext, FC, ReactNode, useState } from "react";
 
 interface ProviderProps {
   children: ReactNode;
 }
 
-interface Context {
-  currentDraggableElement: null | ReactNode;
-  setCurrentDraggableElement: (e: null | ReactNode) => void;
+interface DroppableContextValue {
+  currentDraggableElement: null | HTMLLIElement;
+  setCurrentDraggableElement: (e: null | HTMLLIElement) => void;
 }
 
-const DroppableContext = createContext<Context | undefined>(undefined);
+export const DroppableContext = createContext<DroppableContextValue | undefined>(
+  undefined
+);
 
 export const DroppableContextProvider: FC<ProviderProps> = ({ children }) => {
   const [currentDraggableElement, setCurrentDraggableElement] =
-    useState<null | ReactNode>(null);
+    useState<null | HTMLLIElement>(null);
 
   return (
     <DroppableContext.Provider

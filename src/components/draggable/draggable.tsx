@@ -1,7 +1,8 @@
-import { FC, ReactNode, RefObject, useRef } from "react";
+import { FC, ReactNode, RefObject, useEffect, useRef } from "react";
 import { useCoords } from "./use-coords";
 import { useElementSize } from "./use-element-size";
 import { useElementStyles } from "./use-element-styles";
+import { useDroppableContext } from "../droppable/use-droppable-context";
 
 interface Props {
   // TODO: fix typization
@@ -15,6 +16,7 @@ export const Draggable: FC<Props> = ({ children }) => {
     elementRef: draggableRef,
   });
   const elementInitialSize = useElementSize({ elementRef: draggableRef });
+  const { setCurrentDraggableElement } = useDroppableContext();
 
   useElementStyles({
     dragStartOffsets,
@@ -22,6 +24,14 @@ export const Draggable: FC<Props> = ({ children }) => {
     elementInitialSize,
     mouseCoords: currentMouseCoords,
   });
+
+  useEffect(() => {
+    if (dragStartOffsets) {
+      setCurrentDraggableElement(draggableRef.current);
+    } else {
+      setCurrentDraggableElement(null);
+    }
+  }, [dragStartOffsets, setCurrentDraggableElement]);
 
   return <>{children({ draggableRef })}</>;
 };
